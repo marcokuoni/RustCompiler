@@ -1,0 +1,32 @@
+[package]
+name = "rust_compiler"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+
+[lib]
+name = "rust_compiler"
+path = "src/lib.rs"
+
+
+[[bin]]
+name = "compiler"
+path = "src/main.rs"
+
+
+default-run = "compiler"
+
+
+[features]
+# Enable Unicode identifiers via unicode-ident
+unicode = ["unicode-ident"]
+
+
+[dependencies]
+memchr = "2"
+unicode-ident = { version = "1", optional = true }
+
+
+[dev-dependencies]
+pretty_assertions = "1"
